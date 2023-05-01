@@ -13,7 +13,7 @@ flann = cv2.FlannBasedMatcher(index_params,search_params)
 
 def load_input():
 	input_image = cv2.imread('ikigai_from_webcam.jpg')
-	augment_image = cv2.imread('nine1.jpeg')
+	augment_image = cv2.imread('ace.jpg')
 
 	input_image = cv2.resize(input_image, (300,400),interpolation=cv2.INTER_AREA)
 	augment_image = cv2.resize(augment_image, (300,400))
@@ -77,5 +77,5 @@ if __name__=='__main__':
 		else:
 			cv2.imshow('Final Output', frame)
 		key = cv2.waitKey(15)
-		if(key==27):
+		if cv2.waitKey(1) == ord('q') or key == 27:
 			break
